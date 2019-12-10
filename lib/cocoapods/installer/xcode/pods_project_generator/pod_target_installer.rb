@@ -920,9 +920,9 @@ module Pod
 
               relative_path = target.objc_bridging_module_map_path
                                     .relative_path_from(sandbox.root)
-                                    .dirname.to_s.gsub(' ', '\\ ')
+                                    .to_s.gsub(' ', '\\ ')
               native_target.build_configurations.each do |c|
-                c.build_settings['SWIFT_INCLUDE_PATHS'] = relative_path
+                c.build_settings['MODULEMAP_PRIVATE_FILE'] = relative_path
               end
             end
           end

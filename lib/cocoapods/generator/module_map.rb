@@ -95,7 +95,7 @@ module Pod
       end
 
       def module_name_suffix
-        @private_module_map ? '_Private' : ''
+        ''
       end
 
       def exported_submodules
